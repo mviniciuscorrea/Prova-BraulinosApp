@@ -1,0 +1,23 @@
+#edit {    
+    background: url('../../assets/imgs/fundo_login.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo img {
+    max-width: 250px;
+}
+
+.edit input,
+.edit ion-label {
+    color: white !important;
+    border-color: white !important;    
+}
+
+.edit {
+    display: block;
+    top: 8%;
+    position: absolute;
+}

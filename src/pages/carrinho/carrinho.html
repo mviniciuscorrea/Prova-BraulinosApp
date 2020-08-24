@@ -1,0 +1,69 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<ion-content padding>
+
+  <div *ngIf="servico != null">
+    <ion-list>
+      <ion-list-header style="padding-left: 0px; margin-bottom: -12px;">
+        Seu Carrinho
+      </ion-list-header>
+    </ion-list>
+
+    <ion-row *ngFor="let s of servico.itens">
+      <ion-col col-9 style="padding: 0!important;">
+        <p>1x {{s.servico}}</p>
+        <div *ngIf="s.data_agendamento == ''">
+          <button ion-button icon-start small clear color="danger" style="margin: 0;" (click)="agendamento(s)">
+            <ion-icon name="warning"></ion-icon>
+            Sem Agendamento
+          </button>
+        </div>
+        <div *ngIf="s.data_agendamento !== ''">
+          <button ion-button icon-start small clear color="primary" style="margin: 0;" (click)="agendamento(s)">            
+            <ion-icon name="checkmark"></ion-icon>
+            {{s.data_agendamento}} as {{s.hora_agendamento}}            
+          </button>
+        </div>
+      </ion-col>
+
+      <ion-col col-2 style="padding: 0!important;">
+        <p>{{s.valor | currency:"BRL":true:"1.2"}}</p>
+      </ion-col>
+
+      <ion-col col-1 style="padding: 0!important;">
+        <ion-buttons end>
+          <button ion-button icon-only clear (click)="opcoes(s)">
+            <ion-icon name="more"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+
+    <br>
+
+    <button ion-button full outline small (click)="maisServicos()">Adicionar mais serviços</button>
+
+    <ion-row>
+      <ion-col col-8 style="padding: 0!important;">
+        <span style="font-size: large;">
+          <p><strong>Total</strong></p>
+        </span>
+      </ion-col>
+      <ion-col col-4 style="padding: 0!important; text-align: center;">
+        <span style="font-size: large;">
+          <p><strong>{{total | currency:"BRL":true:"1.2"}}</strong></p>
+        </span>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<br><br>
+
+<ion-footer text-center no-border text-capitalize="false">
+  <ion-toolbar transparent>
+    <button ion-button full color="verde" style="border-radius: 10px; text-transform: none;"
+      (click)="salvar()">Finalizar</button>
+  </ion-toolbar>
+</ion-footer>

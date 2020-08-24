@@ -1,0 +1,48 @@
+<ion-content text-center id="login">
+  <ion-grid class="logo login">
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/imgs/logo_login.png" style="max-width: 65px;">
+      </ion-col>
+    </ion-row>
+
+    <br><br><br>
+
+    <form class="login-form" (ngSubmit)="entrar()">
+      <ion-row>
+        <ion-col>
+          <ion-item padding style="background-color:transparent">
+            <ion-label>
+              <ion-icon name="contact"></ion-icon>
+            </ion-label>
+            <ion-input type="text" placeholder="Usuário" [(ngModel)]="usuario" name="usuario" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item padding style="background-color:transparent">
+            <ion-label>
+              <ion-icon name="key"></ion-icon>
+            </ion-label>
+            <ion-input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col padding>
+          <button type="submit" ion-button color="primary" full>Entrar</button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <br><br><br><br>
+    <button ion-button clear color="light" (click)="novoUsuario()">
+      Cadastrar-se
+    </button>
+  </ion-grid>
+
+
+</ion-content>

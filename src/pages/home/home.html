@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar align-title="center" color="primary">
+    <ion-title>
+      Agendar
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="verCarrinho()">
+        <ion-icon name="cart" style="position:relative; right:9px">
+          <ion-badge *ngIf="carrinho>0"
+            style="position: absolute; font-weight: bold; top:-10px; left:15px; font-size: 9px;" color="danger">
+            {{carrinho}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <br>
+  <ion-slides pager="true">
+    <ion-slide>
+      <ion-col col-6 class="box-item" (click)="abrirServicos(1)">
+        <img src="../../assets/imgs/1.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(2)">
+        <img src="../../assets/imgs/2.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(3)">
+        <img src="../../assets/imgs/3.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(4)">
+        <img src="../../assets/imgs/4.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(5)">
+        <img src="../../assets/imgs/10.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(6)">
+        <img src="../../assets/imgs/5.png">
+      </ion-col>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-col col-6 class="box-item" (click)="abrirServicos(7)">
+        <img src="../../assets/imgs/6.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(8)">
+        <img src="../../assets/imgs/7.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(9)">
+        <img src="../../assets/imgs/8.png">
+      </ion-col>
+
+      <ion-col col-6 class="box-item" (click)="abrirServicos(10)">
+        <img src="../../assets/imgs/9.png">
+      </ion-col>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

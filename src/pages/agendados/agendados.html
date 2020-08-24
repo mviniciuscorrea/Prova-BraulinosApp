@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar align-title="center" color="primary">
+    <ion-title>
+      Agendados
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="servicos!=null">
+    <ion-card *ngFor="let s of servicos">
+      <ion-list>
+        <ion-item-sliding>
+        <ion-item>
+          <h2 text-justify style="color: #2F2D81"><strong>{{s.data_agendamento}} as {{s.hora_agendamento}}</strong></h2>
+          <ion-badge *ngIf="!s.confirmado" item-end color="danger">Confirmar</ion-badge>
+          <ion-badge *ngIf="s.confirmado" item-end color="confirmado">Confirmado</ion-badge>
+          <p text-justify>Serviço: {{s.servico}}</p>
+          <p text-justify>{{s.valor | currency:"BRL":true:"1.2"}}</p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary" (click)="remarcar(s)">
+            <ion-icon name="md-time" style="zoom:1.5;"></ion-icon>
+            Remarcar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      </ion-list>
+    </ion-card>
+  </div>
+
+</ion-content>

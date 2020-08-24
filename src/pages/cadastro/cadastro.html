@@ -1,0 +1,48 @@
+<ion-content text-center id="edit">
+
+  <ion-grid class="logo edit">
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/imgs/logo_login.png" style="max-width: 65px;">
+      </ion-col>
+    </ion-row>
+
+    <form (ngSubmit)="cadastrar()">     
+
+      <ion-row>
+        <ion-col>
+          <ion-item padding style="background-color:transparent">
+            <ion-label stacked>Nome</ion-label>
+            <ion-input type="text" [(ngModel)]="nome" name="edit" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item padding style="background-color:transparent">
+            <ion-label stacked>Usuário</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario" name="edit1" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item padding style="background-color:transparent">
+            <ion-label stacked>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="senha" name="edit2" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>    
+
+      <ion-row>
+        <ion-col padding>
+          <button type="submit" ion-button color="primary" block>Cadastrar</button>
+          <br>
+          <button type="submit" ion-button outline color="light" block (click)="voltar()">Voltar</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar align-title="center" color="primary">
+    <ion-title>
+      Histórico
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>De</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataDe" cancelText="Cancelar" doneText="Confirmar">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ate</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataAte" cancelText="Cancelar" doneText="Confirmar">
+      </ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button block round icon-start (click)="pesquisar()">
+      <ion-icon name="search"></ion-icon>
+      Pesquisar
+    </button>
+  </div>
+
+  <div *ngIf="servicos!=null">
+    <ion-card *ngFor="let s of servicos">
+      <ion-list>
+        <ion-item>
+          <h2 text-justify style="color: #2F2D81"><strong>{{s.data_agendamento}} as {{s.hora_agendamento}}</strong></h2>
+          <ion-badge *ngIf="s.realizado" item-end color="danger">Realizado</ion-badge>
+          <ion-badge *ngIf="!s.realizado" item-end color="confirmado">Aberto</ion-badge>
+          <p text-justify>Serviço: {{s.servico}}</p>
+          <p text-justify>{{s.valor | currency:"BRL":true:"1.2"}}</p>
+
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+
+</ion-content>

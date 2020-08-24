@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title>Agendar Serviço</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngIf="item != null">
+    <ion-card-content>
+      <button ion-item style="padding-left:0px">
+        <ion-icon color="primary" name="md-clock" item-end></ion-icon>
+        <h2 text-justify>
+          <h2 text-justify style="color: #2F2D81"><strong>{{item.servico}}</strong></h2>
+        </h2>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <br><br><br>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Dia</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data" cancelText="Cancelar" doneText="Confirmar">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="hora" cancelText="Cancelar" doneText="Confirmar">
+      </ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <br><br>
+
+  <div padding>
+    <button ion-button block round icon-start (click)="salvar()">
+      <ion-icon name="checkmark"></ion-icon>
+      Agendar
+    </button>
+    <br>
+    <button ion-button block round outline icon-start color="danger" (click)="fechar()">
+      <ion-icon name="close"></ion-icon>
+      Cancelar
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+#login {
+    background: url('../../assets/imgs/fundo_login.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo img {
+    max-width: 250px;
+}
+
+.login input,
+.login ion-label {
+    color: white !important;
+    border-color: white !important;   
+}
+
+.login {
+    display: block;
+    top: 4%;
+    position: absolute;
+}
+
+.voltar {
+    padding: 10px 15px; 
+    text-align: center;
+    border-radius: 4px;
+}
+
+.login ion-item {
+    padding: 5px 16px!important;
+}
+
+.vertical-align-content 
+{
+     display: flex!important;
+     align-content: center!important;
+     align-items: center!important;
+}
+
+.login-form{    
+    .item {       
+        margin-bottom: 15px;       
+    }
+}      

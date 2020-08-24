@@ -1,0 +1,7 @@
+{
+  "name": "BraulinosApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
